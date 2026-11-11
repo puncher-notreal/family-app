@@ -1,0 +1,7 @@
+{
+  "extends": "../../packages/config/tsconfig.node.json",
+  "include": ["src"],
+  "compilerOptions": {
+    "types": ["node"]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "family-app",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "pnpm@11.1.2",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "typecheck": "pnpm -r run typecheck",
+    "dev:mobile": "pnpm --filter mobile dev",
+    "dev:api": "pnpm --filter api dev",
+    "db:schema-test": "pnpm --filter api schema:test",
+    "db:migrate": "pnpm --filter api db:migrate"
+  }
+}

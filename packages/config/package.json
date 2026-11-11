@@ -1,0 +1,9 @@
+{
+  "name": "@family/config",
+  "version": "0.1.0",
+  "private": true,
+  "files": [
+    "tsconfig.node.json",
+    "eslint.base.js"
+  ]
+}
