@@ -1,14 +1,13 @@
-import postgres from 'postgres';
 import { readdir, readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import 'dotenv/config';
+import { createDb } from '../db/client';
 
 const MIGRATIONS_DIR = join(fileURLToPath(new URL('.', import.meta.url)), '..', 'supabase', 'migrations');
 
-const DATABASE_URL = process.env.DATABASE_URL ?? 'postgres://postgres:postgres@localhost:54322/family_app';
-
 async function main() {
-  const sql = postgres(DATABASE_URL, { onnotice: () => {} });
+  const sql = createDb();
 
   await sql`CREATE TABLE IF NOT EXISTS schema_migrations (
     name TEXT PRIMARY KEY,

@@ -16,6 +16,9 @@ importers:
       '@hono/zod-openapi':
         specifier: ^0.18.4
         version: 0.18.4(hono@4.13.17)(zod@3.25.76)
+      dotenv:
+        specifier: ^18.0.10
+        version: 18.0.10
       hono:
         specifier: ^4.7.0
         version: 4.13.17
@@ -1590,6 +1593,11 @@ packages:
 
   dnssd-advertise@1.1.6:
     resolution: {integrity: sha512-Ndrrf6BMPalkQPd/zubL+4YghH2J9NspapQ09uDXwYbvOPkP0oaqf5CkcwJ0b50kS2O3ul6yVu+jz+RY62Cejg==}
+
+  dotenv@18.0.10:
+    resolution: {integrity: sha512-89FAA1xchzK2mxVWdr5F/0rldwiueXs6zJM86rO66EzekR1iBdiXRthyG+m5GvkJaFH3C2LESzamTkgndmLT2A==}
+    engines: {node: '>=12'}
+    hasBin: true
 
   ee-first@1.1.1:
     resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
@@ -4639,6 +4647,8 @@ snapshots:
   detect-libc@2.1.2: {}
 
   dnssd-advertise@1.1.6: {}
+
+  dotenv@18.0.10: {}
 
   ee-first@1.1.1: {}
 
