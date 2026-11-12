@@ -1,6 +1,6 @@
 {
   "extends": "../../packages/config/tsconfig.node.json",
-  "include": ["src"],
+  "include": ["src", "api"],
   "compilerOptions": {
     "types": ["node"]
   }

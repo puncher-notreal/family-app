@@ -2,9 +2,9 @@ import { OpenAPIHono } from '@hono/zod-openapi';
 import { cors } from 'hono/cors';
 import { logger } from 'hono/logger';
 import { requestId } from 'hono/request-id';
-import { healthRoute } from './routes/health';
-import { meRoute } from './routes/me';
-import { AppError, errorEnvelope } from './common/errors';
+import { healthRoute } from './routes/health.js';
+import { meRoute } from './routes/me.js';
+import { AppError, errorEnvelope } from './common/errors.js';
 
 const app = new OpenAPIHono();
 

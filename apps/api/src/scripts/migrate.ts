@@ -2,7 +2,7 @@ import { readdir, readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import 'dotenv/config';
-import { createDb } from '../db/client';
+import { createDb } from '../db/client.js';
 
 const MIGRATIONS_DIR = join(fileURLToPath(new URL('.', import.meta.url)), '..', 'supabase', 'migrations');
 

@@ -1,5 +1,5 @@
 import postgres from 'postgres';
-import { AppError } from '../common/errors';
+import { AppError } from '../common/errors.js';
 
 export type Database = postgres.Sql;
 
