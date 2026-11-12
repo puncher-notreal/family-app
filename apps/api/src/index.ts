@@ -1,4 +1,5 @@
 import { OpenAPIHono } from '@hono/zod-openapi';
+import { cors } from 'hono/cors';
 import { logger } from 'hono/logger';
 import { requestId } from 'hono/request-id';
 import { healthRoute } from './routes/health';
@@ -6,6 +7,23 @@ import { meRoute } from './routes/me';
 import { AppError, errorEnvelope } from './common/errors';
 
 const app = new OpenAPIHono();
+
+const allowedOrigins = (process.env.CORS_ORIGINS ?? '')
+  .split(',')
+  .map((value) => value.trim())
+  .filter(Boolean);
+
+app.use(
+  '*',
+  cors({
+    origin: (origin) => {
+      if (allowedOrigins.includes(origin)) return origin;
+      if (/^https:\/\/[a-z0-9-]+\.vercel\.app$/.test(origin)) return origin;
+      if (/^http:\/\/localhost(:\d+)?$/.test(origin)) return origin;
+      return null;
+    },
+  }),
+);
 
 app.use('*', logger());
 app.use('*', requestId());
